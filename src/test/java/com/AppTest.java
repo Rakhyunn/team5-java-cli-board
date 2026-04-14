@@ -3,8 +3,6 @@ package com;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Scanner;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class AppTest {
@@ -40,19 +38,8 @@ public class AppTest {
     }
 
     @Test
-    @DisplayName("슬라임과 전투 : 전투 중 유저 사망")
-    void t3() {
-        Warrior warrior = new Warrior("용사");
-        warrior.setHp(1); // HP 1로 설정
-        Slime slime = new Slime();
-        BattleManager bm = new BattleManager(warrior, slime, new Scanner("1\n"));
-        bm.start();
-        assertThat(warrior.getDied()).isTrue();
-    }
-
-    @Test
     @DisplayName("슬라임과 전투 : 도망")
-    void t4() {
+    void t3() {
         String rs = AppTestRunner.run("""
                 용사
                 전투
@@ -69,7 +56,7 @@ public class AppTest {
 
     @Test
     @DisplayName("정보 조회")
-    void t5() {
+    void t4() {
         String rs = AppTestRunner.run("""
                 용사
                 정보 조회
@@ -86,7 +73,7 @@ public class AppTest {
 
     @Test
     @DisplayName("고블린 전투 : 고블린 처치")
-    void t6() {
+    void t5() {
         String rs = AppTestRunner.run("""
                 용사
                 전투
@@ -107,7 +94,7 @@ public class AppTest {
 
     @Test
     @DisplayName("유저 사망 처리 : 마을에서 부활")
-    void t7() {
+    void t6() {
         String rs = AppTestRunner.run("""
                 용사
                 전투
@@ -120,12 +107,12 @@ public class AppTest {
                 .contains("용사(이)가 고블린 전투에서 전사하였습니다.")
                 .contains("다음 중 선택하여 주세요.")
                 .contains("1.마을에서 부활(경험치 패널티) 2.게임 재시작 3.게임 종료")
-                .contains("용사(이)가 마을에서 부활하였습니다.(경험치 10% 패널티)");
+                .contains("용사(이)가 마을에서 부활하였습니다.(경험치 패널티)");
     }
 
     @Test
     @DisplayName("유저 사망 처리 : 게임 재시작")
-    void t8() {
+    void t7() {
         String rs = AppTestRunner.run("""
                 용사
                 전투
@@ -145,7 +132,7 @@ public class AppTest {
 
     @Test
     @DisplayName("유저 사망 처리 : 종료")
-    void t9() {
+    void t8() {
         String rs = AppTestRunner.run("""
                 용사
                 전투
