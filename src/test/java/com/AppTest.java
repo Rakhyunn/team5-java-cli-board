@@ -68,7 +68,7 @@ public class AppTest {
                 """);
         assertThat(rs)
                 .contains("닉네임 : 용사")
-                .contains("직업 : Warrior")
+                .contains("직업 : 전사")
                 .contains("레벨 : 1")
                 .contains("체력 : 30")
                 .contains("공격력 : 3")
@@ -172,7 +172,7 @@ public class AppTest {
                 .contains("닉네임을 입력하여 주세요!")
                 .contains("닉네임 : ")
                 .contains("용사")
-                .contains("Mage 용사(이)가 마을에 왔습니다.")
+                .contains("마법사 용사(이)가 마을에 왔습니다.")
                 .contains("게임을 종료합니다.");
     }
 }
