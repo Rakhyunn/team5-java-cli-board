@@ -56,10 +56,5 @@ public class Warrior extends BaseCharacter {
     @Override
     public void takeDamage(BaseCharacter attacker, int damage){
         hp = Math.max(hp - Math.max(damage - defensePower, 1), 0);
-        if(hp == 0) {
-            System.out.println("게임 오버");
-            // 게임 오버 처리
-            // 재시작, 종료 선택 분기 처리
-        }
     }
 }

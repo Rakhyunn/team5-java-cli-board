@@ -119,7 +119,7 @@ public class AppTest {
                 2
                 1
                 2
-                용사
+                용사2
                 종료
                 """);
         assertThat(rs)
@@ -127,7 +127,9 @@ public class AppTest {
                 .contains("다음 중 선택하여 주세요.")
                 .contains("1.마을에서 부활(경험치 패널티) 2.게임 재시작 3.게임 종료")
                 .contains("게임을 재시작합니다.")
-                .contains("닉네임을 입력하여 주세요!");
+                .contains("닉네임을 입력하여 주세요!")
+                .contains("닉네임 : ")
+                .contains("용사2");
     }
 
     @Test
