@@ -24,10 +24,9 @@ public class AppTestRunner {
 
     public static String run(String input) {
         Scanner scanner = new Scanner(input);
-
         ByteArrayOutputStream output = setOutToByteArray();
         new App(scanner).run();
-
+        clearSetOutToByteArray();
         return output.toString();
     }
 }
