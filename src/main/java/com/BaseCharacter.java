@@ -38,6 +38,10 @@ public abstract class BaseCharacter implements BaseInterface {
         this.defensePower = defensePower;
     }
 
+    public boolean getDied() {
+        return hp == 0;
+    }
+
     @Override
     public abstract void attack(BaseCharacter target);
 

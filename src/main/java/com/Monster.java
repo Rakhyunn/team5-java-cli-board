@@ -13,6 +13,7 @@ public class Monster extends BaseCharacter {
 
     @Override
     public void attack(BaseCharacter target) {
+        System.out.printf("%s(이)가 %s(을)를 공격\n", this.getName(), target.getName());
         target.takeDamage(this, attackPower);
     }
 
@@ -20,7 +21,7 @@ public class Monster extends BaseCharacter {
     public void takeDamage(BaseCharacter attacker, int damage) {
         hp = Math.max(hp - Math.max(damage - defensePower, 1), 0);
         if(hp == 0) {
-            System.out.printf("%s(이)가 %s (을)를 처치 성공\n", attacker.getName(), this.getName());
+            System.out.printf("%s(이)가 %s(을)를 처치 성공\n", attacker.getName(), this.getName());
             if (attacker instanceof Warrior warrior) {
                 warrior.addExp(expPoint);
             }

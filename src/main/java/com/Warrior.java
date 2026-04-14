@@ -43,15 +43,13 @@ public class Warrior extends BaseCharacter {
         this.curExp += amount;
         if(curExp >= exp) {
             setLevel(level + 1);
+            System.out.println("레벨업! 현재 레벨: " + level);
         }
-    }
-
-    public boolean getDied() {
-        return hp <= 0;
     }
 
     @Override
     public void attack(BaseCharacter target){
+        System.out.printf("%s(이)가 %s(을)를 공격\n", this.getName(), target.getName());
         target.takeDamage(this, attackPower);
     }
 
