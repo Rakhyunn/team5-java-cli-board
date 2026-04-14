@@ -27,8 +27,28 @@ public class App {
                     return;
                 }
                 case "전투" -> {
-                    BattleManager bm = new BattleManager(warrior, new Slime(), scanner);
-                    bm.start();
+                    while (true) {
+                        System.out.println("어떤 몬스터와 전투하겠습니까?");
+                        System.out.println("1.슬라임 2.고블린 3.뒤로 가기");
+                        System.out.print("숫자를 입력하여 주세요 -> ");
+                        String num = scanner.nextLine().trim();
+                        if (num.equals("1")) {
+                            System.out.println("슬라임과 전투를 시작합니다.");
+                            BattleManager bm = new BattleManager(warrior, new Slime(), scanner);
+                            bm.start();
+                            break;
+                        } else if (num.equals("2")) {
+                            System.out.println("고블린과 전투를 시작합니다.");
+                            BattleManager bm = new BattleManager(warrior, new Goblin(), scanner);
+                            bm.start();
+                            break;
+                        } else if (num.equals("3")) {
+                            System.out.println("이전 메뉴로 돌아갑니다.");
+                            break;
+                        } else {
+                            System.out.println("다시 입력해주세요.");
+                        }
+                    }
                 }
                 case "정보 조회" -> {
                     System.out.println("정보");

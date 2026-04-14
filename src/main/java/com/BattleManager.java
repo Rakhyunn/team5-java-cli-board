@@ -14,7 +14,7 @@ public class BattleManager {
     }
 
     public void start() {
-        System.out.printf("야생에서 %s (이)가 나타났다!.\n어떻게 하시겠습니까?(숫자 입력)\n 1.전투 2.도망\n", monster.getName());
+        System.out.printf("야생에서 %s(이)가 나타났다!.\n어떻게 하시겠습니까?(숫자 입력)\n 1.전투 2.도망\n", monster.getName());
         System.out.print("명령) ");
         String select = scanner.nextLine().trim();
         if(select.equals("1")) {
