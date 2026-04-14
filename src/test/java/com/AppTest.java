@@ -28,10 +28,11 @@ public class AppTest {
                 용사
                 전투
                 1
+                1
                 종료
                 """);
         assertThat(rs)
-                .contains("야생에서 슬라임 (이)가 나타났다!")
+                .contains("야생에서 슬라임(이)가 나타났다!")
                 .contains("어떻게 하시겠습니까?(숫자 입력)")
                 .contains("1.전투 2.도망")
                 .contains("용사(이)가 슬라임(을)를 공격")
@@ -55,11 +56,12 @@ public class AppTest {
         String rs = AppTestRunner.run("""
                 용사
                 전투
+                1
                 2
                 종료
                 """);
         assertThat(rs)
-                .contains("야생에서 슬라임 (이)가 나타났다!")
+                .contains("야생에서 슬라임(이)가 나타났다!")
                 .contains("어떻게 하시겠습니까?(숫자 입력)")
                 .contains("1.전투 2.도망")
                 .contains("잽싸게 도망쳤습니다.");
@@ -76,6 +78,30 @@ public class AppTest {
         assertThat(rs)
                 .contains("닉네임 : 용사")
                 .contains("레벨 : 1")
-                .contains("체력 : 30");
+                .contains("체력 : 30")
+                .contains("공격력 : 3")
+                .contains("방어력 : 2")
+                .contains("경험치 : 0 / 10");
+    }
+
+    @Test
+    @DisplayName("고블린 전투 : 고블린 처치")
+    void t6() {
+        String rs = AppTestRunner.run("""
+                용사
+                전투
+                1
+                1
+                전투
+                2
+                1
+                종료
+                """);
+        assertThat(rs)
+                .contains("야생에서 고블린(이)가 나타났다!")
+                .contains("어떻게 하시겠습니까?(숫자 입력)")
+                .contains("1.전투 2.도망")
+                .contains("용사(이)가 고블린(을)를 공격")
+                .contains("용사(이)가 고블린(을)를 처치 성공");
     }
 }
