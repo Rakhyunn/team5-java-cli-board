@@ -1,6 +1,8 @@
-package com;
+package com.domain.user;
 
-public abstract class BaseCharacter implements BaseInterface {
+import com.domain.BaseInterface;
+
+public class BaseCharacter implements BaseInterface {
     protected String name;
     protected int hp;
     protected int attackPower;
@@ -43,8 +45,12 @@ public abstract class BaseCharacter implements BaseInterface {
     }
 
     @Override
-    public abstract void attack(BaseCharacter target);
+    public void takeDamage(int attackPower) {
+        int actualDamage = Math.max(attackPower - this.defensePower, 1);
+        this.hp = Math.max(this.hp - actualDamage, 0);
+        System.out.printf("%s 남은 HP : %d\n", name, hp);
+        playHitSound();
+    }
 
-    @Override
-    public abstract void takeDamage(BaseCharacter attacker, int damage);
+    protected void playHitSound() {}
 }

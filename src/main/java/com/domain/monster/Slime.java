@@ -1,4 +1,4 @@
-package com;
+package com.domain.monster;
 
 import com.sound.SoundManager;
 import com.sound.SoundType;
@@ -27,7 +27,7 @@ public class Slime extends Monster {
 
     @Override
     public void playAppearSound() {
-        //SoundManager.getInstance().playSfx(SoundType.SFX_SLIME_APPEAR);
+        SoundManager.getInstance().playSfx(SoundType.SFX_SLIME_APPEAR);
     }
 
     @Override

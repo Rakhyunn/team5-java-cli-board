@@ -1,4 +1,4 @@
-package com;
+package com.domain.monster;
 
 import com.sound.SoundManager;
 import com.sound.SoundType;
@@ -31,7 +31,7 @@ public class Goblin extends Monster {
 
     @Override
     public void playAppearSound() {
-        //SoundManager.getInstance().playSfx(SoundType.SFX_GOBLIN_APPEAR);
+        SoundManager.getInstance().playSfx(SoundType.SFX_GOBLIN_APPEAR);
     }
 
     @Override

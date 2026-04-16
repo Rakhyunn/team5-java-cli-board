@@ -1,4 +1,4 @@
-package com;
+package com.domain.user;
 
 public class Mage extends BaseUser {
     public Mage(String name) {
@@ -12,7 +12,7 @@ public class Mage extends BaseUser {
     }
 
     @Override
-    protected void setLevel(int level) {
+    public void setLevel(int level) {
         this.level = level;
         setCurExp(0);
         setExp(level * 10);

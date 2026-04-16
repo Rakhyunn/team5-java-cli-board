@@ -1,4 +1,4 @@
-package com;
+package com.domain.user;
 
 public class Warrior extends BaseUser {
     public Warrior(String name) {
@@ -12,7 +12,7 @@ public class Warrior extends BaseUser {
     }
 
     @Override
-    protected void setLevel(int level) {
+    public void setLevel(int level) {
         this.level = level;
         setCurExp(0);
         setExp(level * 10);
